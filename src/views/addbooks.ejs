@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-custom">
+        <ul class="navbar-nav">
+            <%for (i of nav){%>
+            <li class="nav-item ">
+                <a class="nav-link" href="<%=i.link%>">
+                    <%=i.title%>
+                </a>
+            </li>
+            <%}%>
+
+        </ul>
+    </nav>
+
+    <div class="jumbotron jumbotron-fluid jumbo1">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="heading col-sm-7">
+                    <h1 class="display-2">
+                        <%=title%>
+            </h1>
+            </div>
+            <div class="jumbotron jumbo2 col-sm-4">
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+            <div class="container-fluid">
+                <div class="row ">
+                    <div class="main col-sm-11">
+                        <div class="login">
+                            <form action="/books/save" method="POST" name="addbook">
+                                <div class="form-group row">
+                                    <label for="title" class="col-sm-2 col-form-label"> Title</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="title" name="title">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="author" class="col-sm-2 col-form-label">Author</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="author" name="author">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="form-group row">
+                                    <label for="genre" class="col-sm-2 col-form-label">Genre</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="genre" name="genre">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="image" class="col-sm-2 col-form-label">Image</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="image" name="image">
+                                    </div>
+                                </div>
+
+
+
+
+
+
+
+
+                                <div class="form-group row">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-10 btn1">
+                                        <button type="submit" class="btn btn-primary">Upload</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/signup.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-sm navbar-custom">
+    <ul class="navbar-nav">
+      <%for (i of nav){%>
+        <li class="nav-item ">
+          <a class="nav-link" href="<%=i.link%>"><%=i.title%></a>
+        </li>
+      <%}%>               
+    </ul>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid jumbo1">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="heading col-sm-7">   
+          <h1 class="display-2"><%=title%></h1>
+        </div>
+        <div class="jumbotron jumbo2 col-sm-4">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row ">
+      <div class="main col-sm-11">
+        <div class="login ">
+
+
+
+          <form action="/signup/save" method="POST" name="signup" onsubmit="return validateForm()">
+            <div class="form-group row">
+              <label for="firstname" class="col-sm-2 col-form-label">First Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="firstname" name="firstname">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="lastname" class="col-sm-2 col-form-label">Last Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="lastname" name="lastname">
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <label for="inputemail" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputemail" placeholder="example@google.com"
+                      name="inputemail">
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <label for="inputpassword" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="inputpassword"  name="inputpassword">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="confirmpassword" class="col-sm-2 col-form-label">Confirm Password</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="confirmpassword" 
+                      name="confirmpassword">
+              </div>
+            </div>
+
+
+
+
+
+            <div class="form-group row">
+              <label for="dob" class="col-sm-2 col-form-label">DOB</label>
+                <div class="col-sm-10">
+                  <input type="date" class="form-control" id="dob" name="dob">
+                </div>
+            </div>
+
+
+
+            <fieldset>
+              <div class="form-group row">
+                <label for="gender" class="col-sm-2 col-form-label">Gender:</label>
+                <div class="col-sm-10">
+                  <input type="radio" name="gender" value="male" checked>Male
+                  <input type="radio" name="gender" value="female"> Female
+                </div>
+              </div>
+            </fieldset>
+
+
+            <div class="form-group row">
+              <label for="lknown" class="col-sm-2 col-form-label">Language's Known:</label>
+              <div class="col-sm-10 checkbox">
+                <input type="checkbox" name="check[]" value="english">English
+                <input type="checkbox" name="check[]" value="hindi">Hindi
+                <input type="checkbox" name="check[]" value="malayalam">Malayalam
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <label for="country" class="col-sm-2 col-form-label">Country:</label>
+              <div class="col-sm-10">
+                <select class="custom-select" id="country" name="country">
+                  <option selected>Choose...</option>
+                  <option value="India">INDIA</option>
+                  <option value="USA">USA</option>
+                </select>
+              </div>
+            </div>
+
+
+
+
+            <div class="form-group row">
+              <label for="address" class="col-sm-2 col-form-label">Address:</label>
+              <div class="col-sm-10">
+                <textarea name="address" class="form-control"></textarea>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="phone" class="col-sm-2 col-form-label">Phone No.:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="phone" id="phone">
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+              <div class="col-sm-2"></div>
+               <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck1" name="agree" required>
+                  <label class="form-check-label" for="gridCheck1">
+                        All the details furnished here is best to my knowledge and belief.
+                  </label>
+                </div>
+              </div>
+            </div>
+
+
+
+
+            <div class="form-group row">
+              <div class="col-sm-2"></div>
+              <div class="col-sm-10 btn1">
+                <button type="submit" class="btn btn-primary">SignUp</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

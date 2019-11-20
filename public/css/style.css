@@ -1,0 +1,102 @@
+.navbar-custom {
+    background-color: rgb(10, 1, 19);
+    margin-left: 0%;
+    padding-left: 3.5%;
+}
+
+.nav-item {
+    margin-left: 6%;
+}
+
+.nav-link {
+    color: white;
+}
+
+.jumbo1 {
+    padding: 0%;
+    background-color: rgba(20, 149, 224, 0.918);
+}
+
+.container {
+    margin: 0%;
+    padding: 0%;
+}
+
+.row {
+    margin: 0%;
+    padding: 0%;
+}
+
+.heading {
+    margin-left: 4%;
+    margin-right: 0%;
+    padding-left: 0%;
+    margin-top: 2%;
+    color: white;
+}
+
+.jumbo2 {
+    background-color: rgb(10, 1, 19);
+    margin-top: 2%;
+}
+
+.main {
+    background-color: white;
+    padding-left: 0%;
+    margin-left: 4%;
+    margin-right: 0%;
+    margin-bottom: 2%;
+    padding-right: 5%;
+    margin-top: -50px;
+    padding-bottom: 2%;
+    padding-top: 2%;
+}
+
+.sub {
+    padding-top: 3%;
+    margin-left: 5%;
+    margin-right: 0%;
+    padding-right: 0%;
+    padding-left: 0%;
+}
+
+.sub1 {
+    margin: 0%;
+    padding-left: 2%;
+}
+
+.sub2 {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-color: rgb(216, 212, 212);
+}
+
+.login .row {
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 1%;
+    margin-left: 0%;
+}
+
+.sub img {
+    width: 80%;
+    height: 80%;
+}
+
+.btn1 {
+   text-align: center;
+}
+
+.login .top {
+    margin-left: 15%;
+    text-align: center;
+}
+h4{
+
+color: burlywood;}
+h3{
+    color: rgb(102, 172, 205);
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <script src="/js/jquery.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-sm navbar-custom">
+    <ul class="navbar-nav">
+      <%for (i of nav){%>
+        <li class="nav-item ">
+          <a class="nav-link" href="<%=i.link%>"><%=i.title%></a>
+        </li>
+      <%}%>            
+    </ul>
+  </nav>
+
+  <div class="jumbotron jumbotron-fluid jumbo1">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="heading col-sm-7">   
+          <h1 class="display-2"><%=title%></h1>
+        </div>
+        <div class="jumbotron jumbo2 col-sm-4">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="main col-sm-11">
+        <%for(i in books) {%>
+          <div class="row sub border-bottom">
+            <div class="sub1 col-sm-2">
+              <img src="/images/<%=books[i].image%>" class="rounded-circle" alt="logo">
+            </div>
+            <div class="sub2 col-sm-9">
+              <h1><%=books[i].title%></h1>
+              <h2><%=books[i].genre%></h2>
+              <h3><%=books[i].auhtor%></h3>
+              <a href="/books/<%=i%>">Readmore</a>
+            </div>
+          </div>
+        <%}%>
+           
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
+          
