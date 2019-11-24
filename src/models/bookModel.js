@@ -2,6 +2,7 @@ const mongoose=require('mongoose');
 var studentSchema=new mongoose.Schema({
     title:{type:String,
         required:true},
+    bookId:String,
     author:String,
     genre:String,
     image:String

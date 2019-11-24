@@ -107,7 +107,7 @@ function route(nav) {
 
     booksRouter.route('/delete/remove')
     .post((req,res)=>{
-        bookModel.deleteOne({title:req.body.title},(err,data)=>{
+        bookModel.deleteOne({bookId:req.body.bookId},(err,data)=>{
             if(err)
             {
                 res.json({status:"Failed"});
@@ -125,7 +125,7 @@ function route(nav) {
 
     booksRouter.route('/update/save')
     .post((req,res)=>{
-        bookModel.updateOne({title:req.body.title},{$set:req.body},(err,data)=>{
+        bookModel.updateOne({bookId:req.body.bookId},{$set:req.body},(err,data)=>{
             if(err)
             {
                 res.json({"status":"Failed"});
