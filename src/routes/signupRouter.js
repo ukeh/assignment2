@@ -15,10 +15,10 @@ function route(nav){
         var add=new signupModel(req.body);
         add.save((err,data)=>{
             if(err){
-                throw err;
+                res.json({status:"Failed"});
             }
             else{
-                res.send(data);
+                res.json({status:"Success"});
             }
 
         });

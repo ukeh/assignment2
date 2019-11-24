@@ -1,11 +1,14 @@
 .navbar-custom {
     background-color: rgb(10, 1, 19);
     margin-left: 0%;
-    padding-left: 3.5%;
+    margin-right: 0%;
+    padding-left: 4%;
+    
+
 }
 
 .nav-item {
-    margin-left: 6%;
+    margin-left: 2%;
 }
 
 .nav-link {

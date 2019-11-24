@@ -10,7 +10,7 @@ function route(nav) {
     // var books = [
     //     {
     //         image: "harry.jpga",
-    //         title: "War and peace",
+    //         title: "Harry Potter",
     //         genre: "Historical Fiction",
     //         auhtor: "J K Rowlink"
     //     },
@@ -22,7 +22,7 @@ function route(nav) {
     //     },
     //     {
     //         image: "hobbit.jpg",
-    //         title: "The Bobbit",
+    //         title: "The Hobbit",
     //         genre: "Fantasy",
     //         auhtor: "J R R Tolkien"
     //     },
@@ -87,6 +87,58 @@ function route(nav) {
         })
 
 
+   
+
+    booksRouter.route('/update')
+    .get((req,res)=>{
+        res.render('bookUpdate.ejs',{
+            nav,
+            title:"Update Books"
+        })
+    });
+
+    booksRouter.route('/delete')
+    .get((req,res)=>{
+        res.render('bookDelete.ejs',{
+            nav,title:"Delete Books"
+        })
+    });
+
+
+    booksRouter.route('/delete/remove')
+    .post((req,res)=>{
+        bookModel.deleteOne({title:req.body.title},(err,data)=>{
+            if(err)
+            {
+                res.json({status:"Failed"});
+            }
+            else if(data.n==0){
+                res.json({status:"No match found"});
+            }
+            else{
+                res.json({status:"Success"});
+            }
+        })
+    });
+
+
+
+    booksRouter.route('/update/save')
+    .post((req,res)=>{
+        bookModel.updateOne({title:req.body.title},{$set:req.body},(err,data)=>{
+            if(err)
+            {
+                res.json({"status":"Failed"});
+            }
+            else if(data.n==0){
+                res.json({status:"No match found"});
+            }
+            else{
+                res.json({status:"Success"});
+            }
+        })
+    });
+    
 
     booksRouter.route('/:id')
         .get((req, res) => {
