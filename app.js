@@ -21,8 +21,7 @@ var nav=[{link:"/",title:'Home'},
             {link:"/authors",title:'Authors'},
             {link:"/books/add",title:'AddBooks'},
             {link:"/authors/add",title:"AddAuthors"},
-            {link:"/books/update",title:"Update"},
-            {link:"/books/delete",title:"Delete"}];
+           ];
 
 
 

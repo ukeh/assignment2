@@ -48,7 +48,10 @@
               <h2><%=books[i].genre%></h2>
               <h3><%=books[i].author%></h3>
               <h4><%=books[i].bookId%></h4>
-              <a href="/books/<%=i%>">Readmore</a>
+              <form action="/books/readmore" method="POST">
+                <input type="hidden" name='id' value='<%=books[i]._id%>'>
+                <button type="submit" id='btn2'>Readmore...</button>  
+              </form>
             </div>
           </div>
         <%}%>

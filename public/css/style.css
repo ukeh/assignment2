@@ -99,7 +99,34 @@ body {
 }
 h4{
 
-color: burlywood;}
+color: rgb(39, 214, 91);}
 h3{
     color: rgb(102, 172, 205);
+}
+#btn2{
+   border: none;
+   background: none;
+   padding: 0px;
+   font-weight: bold;
+   color: rgb(235, 29, 11);
+}
+#btn3{
+    width: 60%;
+    border-radius: 3px;
+  
+    
+}
+#btn4{
+    width: 60%;
+    border-radius: 3px;
+   
+}
+.delete{
+    margin:10%;
+}
+.edit{
+    margin: 10%;
+}
+.sub3{
+    padding-top: 1%;
 }

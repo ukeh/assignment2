@@ -6,7 +6,6 @@ var booksRouter = express.Router();
 var {bookModel}=require('../models/bookModel');
 
 function route(nav) {
-    var test=[];
     // var books = [
     //     {
     //         image: "harry.jpga",
@@ -48,7 +47,6 @@ function route(nav) {
                         throw err;
                 }
                 else{
-                    test=data;
                     res.render('books.ejs', {
                         nav,
                         title: "Books",
@@ -89,43 +87,53 @@ function route(nav) {
 
    
 
-    booksRouter.route('/update')
-    .get((req,res)=>{
-        res.render('bookUpdate.ejs',{
-            nav,
-            title:"Update Books"
-        })
-    });
-
-    booksRouter.route('/delete')
-    .get((req,res)=>{
-        res.render('bookDelete.ejs',{
-            nav,title:"Delete Books"
-        })
-    });
-
-
-    booksRouter.route('/delete/remove')
+    booksRouter.route('/edit')
     .post((req,res)=>{
-        bookModel.deleteOne({bookId:req.body.bookId},(err,data)=>{
+        bookModel.findById(req.body.id,(err,data)=>{
             if(err)
             {
-                res.json({status:"Failed"});
-            }
-            else if(data.n==0){
-                res.json({status:"No match found"});
+                throw err;
             }
             else{
-                res.json({status:"Success"});
+                res.render('bookUpdate.ejs',{
+                    nav,
+                    title:"Update Books",
+                    data
+                })
             }
         })
+       
     });
 
+    // booksRouter.route('/delete')
+    // .get((req,res)=>{
+    //     res.render('bookDelete.ejs',{
+    //         nav,title:"Delete Books"
+    //     })
+    // });
 
 
-    booksRouter.route('/update/save')
+
+    booksRouter.route('/delete')
     .post((req,res)=>{
-        bookModel.updateOne({bookId:req.body.bookId},{$set:req.body},(err,data)=>{
+        bookModel.findByIdAndDelete(req.body.id,(err,data)=>{
+            if(err)
+            {
+                throw err;
+            }
+            else{
+                res.redirect("/books");
+            }
+        })
+    })
+
+
+
+
+
+    booksRouter.route('/update')
+    .post((req,res)=>{
+        bookModel.findByIdAndUpdate(req.body.id,{$set:req.body},(err,data)=>{
             if(err)
             {
                 res.json({"status":"Failed"});
@@ -140,15 +148,24 @@ function route(nav) {
     });
     
 
-    booksRouter.route('/:id')
-        .get((req, res) => {
-            const id = req.params.id;
-            res.render('book.ejs', {
-                nav,
-                title: "Book",
-                book: test[id]
-            })
-
+    booksRouter.route('/readmore')
+        .post((req, res) => {
+            console.log(req.body.id)
+           bookModel.findById(req.body.id,(err,data)=>{
+            if(err)
+            {
+                throw err;
+            }
+            else{
+                res.render('book.ejs', {
+                    nav,
+                    title: "Book",
+                    book: data
+                })
+    
+            }
+           });
+            
         });
 
 

@@ -17,9 +17,9 @@
   <nav class="navbar navbar-expand-sm navbar-custom">
     <ul class="navbar-nav">
       <%for (i of nav){%>
-        <li class="nav-item ">
-          <a class="nav-link" href="<%=i.link%>"><%=i.title%></a>
-        </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="<%=i.link%>"><%=i.title%></a>
+      </li>
       <%}%>
                    
     </ul>
@@ -30,29 +30,43 @@
       <div class="row">
         <div class="heading col-sm-7">   
           <h1 class="display-2"><%=title%></h1>
-        </div>
-        <div class="jumbotron jumbo2 col-sm-4">
+      </div>
+      <div class="jumbotron jumbo2 col-sm-4">
+      </div>
+      </div>
+      </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="main col-sm-11">
+            <div class="row sub border-bottom">
+              <div class="sub1 col-sm-2">
+                <img src="/images/<%=book.image%>" class="rounded-circle" alt="logo">
+              </div>
+              <div class="sub2 col-sm-6">
+                <h1><%=book.title%></h1>
+                <h2><%=book.genre%></h2>
+                <h3><%=book.author%></h3>
+                <h4><%=book.bookId%></h4>
+              </div>
+              <div class="sub3 col-sm-3">
+                <div class="edit">
+                  <form action="/books/edit" method="POST">
+                    <input type="hidden" name="id" value="<%=book._id%>">
+                    <button type="submit" id='btn3'>Edit</button>
+                  </form>
+                </div>
+                <div class="delete">
+                  <form action="/books/delete" method="POST">
+                    <input type="hidden" name="id" value="<%=book._id%>">
+                    <button type="submit" id="btn4">Delete</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="main col-sm-11">
-        <div class="row sub border-bottom">
-          <div class="sub1 col-sm-2">
-            <img src="/images/<%=book.image%>" class="rounded-circle" alt="logo">
-          </div>
-          <div class="sub2 col-sm-9">
-            <h1><%=book.title%></h1>
-            <h2><%=book.genre%></h2>
-            <h3><%=book.author%></h3>
-            <h4><%=book.bookId%></h4>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
 </body>
 
