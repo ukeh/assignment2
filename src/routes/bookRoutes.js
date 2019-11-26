@@ -136,13 +136,10 @@ function route(nav) {
         bookModel.findByIdAndUpdate(req.body.id,{$set:req.body},(err,data)=>{
             if(err)
             {
-                res.json({"status":"Failed"});
+                throw err;
             }
-            else if(data.n==0){
-                res.json({status:"No match found"});
-            }
-            else{
-                res.json({status:"Success"});
+             else{
+                res.redirect("/books");
             }
         })
     });
