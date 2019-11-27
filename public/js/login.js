@@ -1,20 +1,23 @@
-function validateLogin(form){
-   // alert("success");
-var email=form.inputEmail.value;
-var pass=form.inputPassword.value;
-var email_re=/\S+@\S+\.\S/;
+function validateForm(){
+    //alert("yoyo");
+   
+    var email=document.getElementById("inputemail").value;
+    
+    var pass1=document.getElementById("inputpassword").value;
+    
+    var email_re=/\S+@\S+\.\S/;
+  
 
-if(email_re.test(email)==false){
+
+   
+    if(email_re.test(email)==false){
     alert("Please enter a valid email");
     return false;
     }
-
-else if(pass.length<6){
-    alert("Check your password");
-    return false;
+    else if(pass1==''){
+        alert("Please enter password");
+        return false;
+    }
+   else{ return true;
 }
- else{
-return true;
-}
-
 }

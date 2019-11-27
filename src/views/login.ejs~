@@ -40,7 +40,7 @@
     <div class="row ">
       <div class="main col-sm-11">
         <div class="login ">
-          <form action="/login/save" method="POST" name="login" onsubmit="return validateForm()">
+          <form action="/login/save" method="POST" name="login" onsubmit="return validateLogin(this)">
             <div class="form-group row">
               <label for="inputemail" class="col-sm-2 col-form-label">Email</label>
               <div class="col-sm-10">
