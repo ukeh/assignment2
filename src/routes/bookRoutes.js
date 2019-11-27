@@ -71,13 +71,13 @@ function route(nav) {
         .post((req, res) => {
             var addbook=new bookModel(req.body);
             addbook.save((err,data)=>{
-                if(err){
-                        res.json({status:"error"});
-                        throw err;
-                }
-                else{
-                        res.json({status:"success"});
-                }
+            if(err)
+            {
+                throw err;
+            }
+            else{
+                res.redirect("/books");
+            }
             });
 
             //res.send("form submitted")
